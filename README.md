@@ -39,7 +39,7 @@ Bash
 
 # Клонирование репозитория
 
-git clone [https://github.com/your-username/rust-sniffer.git](https://github.com/your-username/rust-sniffer.git)
+git clone [https://github.com/augustuz-zeno/rust-sniffer.git](https://github.com/augustuz-zeno/rust-sniffer.git)
 cd rust-sniffer
 
 # Сборка проекта
