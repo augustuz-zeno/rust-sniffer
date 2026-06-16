@@ -1,0 +1,21 @@
+[package]
+name = "rust-sniffer"
+version = "2.0.0"
+edition = "2021"
+
+[[bin]]
+name = "rust-sniffer"
+path = "src/main.rs"
+
+[dependencies]
+pnet       = "0.35"
+chrono     = { version = "0.4", features = ["clock"] }
+
+[target.'cfg(windows)'.dependencies]
+winreg     = "0.52"
+
+[profile.release]
+opt-level     = 3
+lto           = true
+codegen-units = 1
+strip         = "symbols"
