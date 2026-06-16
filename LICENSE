@@ -1,13 +1,19 @@
-### Анализ кода (по предоставленному файлу)
-Основываясь на проанализированном содержимом, я выделил важные аспекты архитектуры:
+Copyright (c) 2026
 
-1.  **Логика потоков (`FlowKey`):** Использование кортежа `(src, sport) < (dst, dport)` для нормализации ключа потока — это правильное решение, гарантирующее, что трафик в обоих направлениях одного соединения попадет в одну статистику.
-2.  **Структура `FlowStats`:**
-    * Содержит поля для `tls_version`, `dns_query` и `http_requests`, что говорит о глубоком анализе уровня приложений (L7).
-    * Флаг `printed` используется для оптимизации вывода в консоль, чтобы не перерисовывать уже выведенные данные (Live-update).
-3.  **Модули:**
-    * Проект хорошо структурирован. Модули четко разделены по ответственности (`capture` для I/O, `protocols` для данных).
-    * Зависимости (на основе `Cargo.lock` и структуры `target`) включают `pnet` (основная библиотека для работы с сетью), `chrono` (для временных меток) и `serde` (вероятно, для сериализации данных).
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do camera, subject to the following conditions:
 
-**Рекомендация:**
-Для улучшения проекта можно добавить поддержку экспорта статистики в JSON или CSV, используя возможности `serde`, так как этот модуль уже присутствует в дереве зависимостей проекта.
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
